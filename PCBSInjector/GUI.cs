@@ -28,10 +28,14 @@ namespace PCBSInjector
 
                 try
                 {
-                    bool isInjected = IsInjected(pathLabel.Text + assemblySubPath, "Assembly-CSharp-firstpass.dll", "LogoSplash", "Awake", "PCBSModloader.dll", "PCBSModloader.ModLoader", "Init");
+                    bool isInjected = IsInjected(pathLabel.Text + assemblySubPath + "/Assembly-CSharp-firstpass.dll", "LogoSplash", "Awake", Directory.GetCurrentDirectory()+ "/PCBSModloader.dll", "PCBSModloader.ModLoader", "Init");
                     if (isInjected)
                     {
                         StatusAlreadyInstalled();   
+                    }
+                    else
+                    {
+                        StatusReadyToInstall();
                     }
                 }
                 catch (Exception ex)
@@ -46,6 +50,13 @@ namespace PCBSInjector
             this.installBtn.Enabled = false;
             progressBar.Value = 100;
             progressLabel.Text = "Modloader already installed!";
+        }
+
+        private void StatusReadyToInstall()
+        {
+            this.installBtn.Enabled = true;
+            progressBar.Value = 0;
+            progressLabel.Text = "Modloader ready to install!";
         }
 
         private void StatusInstalledSuccessfully()
@@ -92,11 +103,11 @@ namespace PCBSInjector
             }
         }
 
-        private bool IsInjected(string mainPath, string assemblyToPatch, string assemblyType, string assemblyMethod, string loaderAssembly, string loaderType, string loaderMethod)
+        private bool IsInjected(string assemblyToPatch, string assemblyType, string assemblyMethod, string loaderAssembly, string loaderType, string loaderMethod)
         {
             using (ModuleDefinition
-                assembly = ModuleDefinition.ReadModule(mainPath + "/" + assemblyToPatch),
-                loader = ModuleDefinition.ReadModule(mainPath + "/" + loaderAssembly)
+                assembly = ModuleDefinition.ReadModule(assemblyToPatch),
+                loader = ModuleDefinition.ReadModule(loaderAssembly)
             )
             {
                 MethodDefinition methodToInject = loader.GetType(loaderType).Methods.Single(x => x.Name == loaderMethod);
