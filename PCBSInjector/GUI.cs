@@ -15,7 +15,6 @@ namespace PCBSInjector
         public GUI()
         {
             InitializeComponent();
-            progressBar.ForeColor = Color.Green;
         }
 
         private void gamePathBtn_Click(object sender, EventArgs e)
@@ -48,13 +47,15 @@ namespace PCBSInjector
         private void StatusAlreadyInstalled()
         {
             this.installBtn.Enabled = false;
-            progressBar.Value = 100;
+            this.removeBtn.Enabled = true;
+            progressBar.Value = 1;
             progressLabel.Text = "Modloader already installed!";
         }
 
         private void StatusReadyToInstall()
         {
             this.installBtn.Enabled = true;
+            this.removeBtn.Enabled = false;
             progressBar.Value = 0;
             progressLabel.Text = "Modloader ready to install!";
         }
@@ -62,8 +63,17 @@ namespace PCBSInjector
         private void StatusInstalledSuccessfully()
         {
             this.installBtn.Enabled = false;
-            progressBar.Value = 100;
+            this.removeBtn.Enabled = true;
+            progressBar.Value = 1;
             progressLabel.Text = "Modloader successfully installed!";
+        }
+
+        private void StatusUninstalledSuccessfully()
+        {
+            this.installBtn.Enabled = true;
+            this.removeBtn.Enabled = false;
+            progressBar.Value = 0;
+            progressLabel.Text = "Modloader successfully uninstalled!";
         }
 
         private void installBtn_Click(object sender, EventArgs e)
@@ -123,6 +133,54 @@ namespace PCBSInjector
                 return false;
             }
            
+        }
+
+        private void Remove(string mainPath, string assemblyToPatch, string assemblyType, string assemblyMethod, string loaderAssembly, string loaderType, string loaderMethod)
+        {
+            DefaultAssemblyResolver resolver = new DefaultAssemblyResolver();
+            resolver.AddSearchDirectory(mainPath);
+
+            using (ModuleDefinition
+                assembly = ModuleDefinition.ReadModule(mainPath + "/" + assemblyToPatch, new ReaderParameters { ReadWrite = true, AssemblyResolver = resolver }),
+                loader = ModuleDefinition.ReadModule(mainPath + "/" + loaderAssembly)
+            )
+            {
+                MethodDefinition methodToInject = loader.GetType(loaderType).Methods.Single(x => x.Name == loaderMethod);
+                MethodDefinition methodToHook = assembly.GetType(assemblyType).Methods.First(x => x.Name == assemblyMethod);
+
+                Instruction toRemove = null;
+                foreach (Instruction instruction in methodToHook.Body.Instructions)
+                {
+                    if (instruction.OpCode.Equals(OpCodes.Call) && instruction.Operand.ToString().Equals($"System.Void {loaderType}::{loaderMethod}()"))
+                    {
+                        toRemove = instruction;
+                        break;
+                    }
+                }
+                if (toRemove != null)
+                {
+                    ILProcessor processor = methodToHook.Body.GetILProcessor();
+                    processor.Remove(toRemove);
+                }
+
+                assembly.Write();
+            }
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            string mainPath = pathLabel.Text + assemblySubPath;
+            try
+            {
+                Remove(mainPath, "Assembly-CSharp-firstpass.dll", "LogoSplash", "Awake", "PCBSModloader.dll", "PCBSModloader.ModLoader", "Init");
+                StatusUninstalledSuccessfully();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            File.Delete(mainPath + "/PCBSModloader.dll");
+            File.Delete(mainPath + "/0Harmony.dll");
         }
     }
 }

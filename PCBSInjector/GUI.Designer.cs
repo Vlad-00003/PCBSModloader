@@ -71,6 +71,7 @@
             this.removeBtn.TabIndex = 4;
             this.removeBtn.Text = "Remove Modloader";
             this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // installBtn
             // 
@@ -105,8 +106,10 @@
             // progressBar
             // 
             this.progressBar.Location = new System.Drawing.Point(13, 100);
+            this.progressBar.Maximum = 1;
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(423, 23);
+            this.progressBar.Step = 1;
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 1;
             // 
