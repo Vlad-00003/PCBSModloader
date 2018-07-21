@@ -133,7 +133,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GUI";
             this.Text = "Modloader Injector for PC Building Simulator v0.2";
-            this.Load += new System.EventHandler(this.GUI_Load);
             this.InformationBox.ResumeLayout(false);
             this.InformationBox.PerformLayout();
             this.ResumeLayout(false);
