@@ -129,7 +129,7 @@
             this.Controls.Add(this.progressBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GUI";
-            this.Text = "Modloader Injector for PC Building Simulator";
+            this.Text = "Modloader Injector for PC Building Simulator v0.1";
             this.InformationBox.ResumeLayout(false);
             this.InformationBox.PerformLayout();
             this.ResumeLayout(false);
