@@ -27,7 +27,6 @@ namespace PCBSModloader
 
         public static void Init()
         {
-            PatchMain.Main();
             ModLogs.EnableLogs();
 
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -70,7 +69,9 @@ namespace PCBSModloader
             {
                 Directory.CreateDirectory(AssetBundlesPath);
             }*/
-          
+
+            PatchMain.Main();
+
             ModLogs.Log("Loading internal mods...");
             LoadMod(new ModUI());
             //LoadMod(new Parts());
@@ -82,7 +83,7 @@ namespace PCBSModloader
             ModLogs.Log("Finished loading.");
         }
 
-        private static void LoadMods()
+        public static void LoadMods()
         {
             // Replaced with a new folder sorting system
 

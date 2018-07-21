@@ -200,6 +200,7 @@
     <Compile Include="AssetBundles.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
+    <Compile Include="Reloader.cs" />
     <Compile Include="Patch.cs" />
     <Compile Include="ModLogs.cs" />
     <Compile Include="ModUI.cs" />
