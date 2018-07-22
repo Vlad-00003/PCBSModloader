@@ -19,10 +19,7 @@ namespace PCBSModloader
 
         public static void Log(string logString)
         {
-            ModConsole console = new ModConsole();
-
             File.AppendAllText(LogsPath, logString + Environment.NewLine);
-            console.logs += logString + Environment.NewLine;
         }
 
         private static string GetGameRootPath()

@@ -31,180 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony">
-      <HintPath>..\..\Release\net35\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="ArabicSupport">
-      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\ArabicSupport.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnityEditor">
-      <HintPath>D:\Programy\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AIModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.AIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ARModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ARModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClothModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GridModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.GridModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticlesLegacyModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ParticlesLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StyleSheetsModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.StyleSheetsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Timeline">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UNETModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VideoModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.VRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WebModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.WebModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WindModule">
-      <HintPath>D:\Programy\Steam\steamapps\common\PC Building Simulator\PCBS_Data\Managed\UnityEngine.WindModule.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="OBJLoader.cs" />
-    <Compile Include="PartReplacer.cs" />
     <Compile Include="AssetBundles.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
-    <Compile Include="ModConsole.cs" />
-    <Compile Include="Reloader.cs" />
-    <Compile Include="Patch.cs" />
     <Compile Include="ModLogs.cs" />
     <Compile Include="ModUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,6 +41,29 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

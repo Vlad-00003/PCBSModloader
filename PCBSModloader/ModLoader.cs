@@ -56,8 +56,6 @@ namespace PCBSModloader
 
             ModLogs.Log("Loading internal mods...");
             LoadMod(new ModUI());
-            LoadMod(new ModConsole());
-            //LoadMod(new Parts());
 
             ModLogs.Log("Loading mods...");
             LoadMods();
