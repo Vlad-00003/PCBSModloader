@@ -17,5 +17,7 @@
         public virtual void FixedUpdate() { }
 
         public virtual void Stop() { }
+
+        public virtual string Modpath { get { return ModLoader.ModsPath + "/" + ID; } }
     }
 }
