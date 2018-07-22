@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using Harmony;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
-using Harmony;
 
 namespace PCBSModloader
 {
@@ -18,12 +15,11 @@ namespace PCBSModloader
         public static ModLoader Instance { get; private set; }
         public static Textures loadTextures;
         public static AssetBundles loadAssetBundles;
+        public static HarmonyInstance Harmony { get; private set; }
+
 
         public static readonly string Version = "0.1";
         public static string ModsPath = GetGameRootPath() + "/Mods";
-        public static string PatchesPath = GetGameRootPath() + "/Mods/Harmony";
-        /*public static string TexturesPath = GetGameRootPath() + "/Mods/Textures";
-        public static string AssetBundlesPath = GetGameRootPath() + "/Mods/AssetBundles";*/
 
         public static void Init()
         {
@@ -50,32 +46,21 @@ namespace PCBSModloader
             ModLoaderLoaded = false;
             LoadedMods = new List<Mod>();
 
+            ModLogs.Log("Initializing harmony...");
+            Harmony = HarmonyInstance.Create("com.github.harmony.pcbs.mod");
+
             if (!Directory.Exists(ModsPath))
             {
                 Directory.CreateDirectory(ModsPath);
             }
 
-            if (!Directory.Exists(PatchesPath))
-            {
-                Directory.CreateDirectory(PatchesPath);
-            }
-
-            /*if (!Directory.Exists(TexturesPath))
-            {
-                Directory.CreateDirectory(TexturesPath);
-            }
-
-            if (!Directory.Exists(AssetBundlesPath))
-            {
-                Directory.CreateDirectory(AssetBundlesPath);
-            }*/
-
-            PatchMain.Main();
-
             ModLogs.Log("Loading internal mods...");
             LoadMod(new ModUI());
+<<<<<<< HEAD
             LoadMod(new ModConsole());
             //LoadMod(new Parts());
+=======
+>>>>>>> 62e5b4a72c7485830c14a55ac48f760f970c1b71
 
             ModLogs.Log("Loading mods...");
             LoadMods();
@@ -86,8 +71,6 @@ namespace PCBSModloader
 
         public static void LoadMods()
         {
-            // Replaced with a new folder sorting system
-
             foreach (string dir in Directory.GetDirectories(ModsPath))
             {
                 foreach (string file in Directory.GetFiles(dir))
@@ -98,14 +81,6 @@ namespace PCBSModloader
                     }
                 }
             }
-
-            /*foreach (string file in Directory.GetFiles(ModsPath))
-            {
-                if (file.EndsWith(".dll"))
-                {
-                    LoadDLL(file);
-                }
-            }*/
         }
         
         private static void LoadDLL(string file)
@@ -119,6 +94,9 @@ namespace PCBSModloader
                     LoadMod((Mod)Activator.CreateInstance(type));
                 }
             }
+
+            // load any harmony patches within the Mod assembly
+            Harmony.PatchAll(assembly);
         }
 
         private static void LoadMod(Mod mod)
