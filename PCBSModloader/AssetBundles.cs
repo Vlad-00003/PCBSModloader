@@ -8,7 +8,7 @@ namespace PCBSModloader
     {
         public static AssetBundle LoadBundle(Mod mod, string BundleName)
         {
-            string bundle = ModLoader.ModsPath + "/" + mod.ID + "/AssetBundles";
+            string bundle = ModLoader.ModsPath + "/" + mod.ID + "/AssetBundles/" + BundleName;
             if (File.Exists(bundle))
             {
                 try
@@ -26,6 +26,28 @@ namespace PCBSModloader
                 ModLogs.Log(string.Format("ERROR in LoadBundle(): File not found: {0}", BundleName));
                 return null;
             }
+        }
+
+        public static Mesh LoadOBJMesh(string fileName)
+        {
+            string fn = ModLoader.ModsPath + "/Meshes/" + fileName;
+            if (!File.Exists(fn))
+            {
+                ModLogs.Log(string.Format("<b>LoadOBJ() Error:</b>{1}File not found: {0}", fn, Environment.NewLine));
+                return null;
+            }
+            string ext = Path.GetExtension(fn).ToLower();
+            if (ext == ".obj")
+            {
+                OBJLoader obj = new OBJLoader();
+                Mesh mesh = obj.ImportFile(ModLoader.ModsPath + "/Meshes/" + fileName);
+                mesh.name = Path.GetFileNameWithoutExtension(fn);
+                ModLogs.Log(string.Format("Loading Mesh {0}...", mesh.name));
+                return mesh;
+            }
+            else
+                ModLogs.Log(string.Format("<b>LoadOBJ() Error:</b>{0}Only (*.obj) files are supported", Environment.NewLine));
+            return null;
         }
     }
 }

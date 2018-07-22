@@ -197,9 +197,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OBJLoader.cs" />
+    <Compile Include="PartReplacer.cs" />
     <Compile Include="AssetBundles.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
+    <Compile Include="ModConsole.cs" />
     <Compile Include="Reloader.cs" />
     <Compile Include="Patch.cs" />
     <Compile Include="ModLogs.cs" />

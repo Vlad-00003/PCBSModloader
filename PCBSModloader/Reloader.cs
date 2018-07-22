@@ -16,7 +16,6 @@ namespace PCBSModloader
                 ModLoader.LoadMods();
 
                 ModLogs.Log("Reloaded all the mods!");
-                //public static List<Mod> LoadedMods { get; private set; }
             }
         }
     }

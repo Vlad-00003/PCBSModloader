@@ -51,7 +51,7 @@ namespace PCBSModloader
 
                 foreach (Mod mod in ModLoader.LoadedMods)
                 {
-                    if (mod.ID == "ModUI")
+                    if (mod.ID == "ModUI" || mod.ID == "ModConsole")
                         continue;
 
                     i += 1;
