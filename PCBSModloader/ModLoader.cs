@@ -64,7 +64,7 @@ namespace PCBSModloader
             ModLogs.Log("Finished loading.");
         }
 
-        private static void LoadMods()
+        public static void LoadMods()
         {
             foreach (string dir in Directory.GetDirectories(ModsPath))
             {
