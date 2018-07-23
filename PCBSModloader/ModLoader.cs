@@ -91,7 +91,14 @@ namespace PCBSModloader
             }
 
             // load any harmony patches within the Mod assembly
-            Harmony.PatchAll(assembly);
+            try
+            {
+                Harmony.PatchAll(assembly);
+            }
+            catch (Exception e)
+            {
+                ModLogs.Log("Could not load Harmony Patches from " + assembly.FullName + "\n" + e.Message + "\n" + e.StackTrace);
+            }
         }
 
         private static void LoadMod(Mod mod)
