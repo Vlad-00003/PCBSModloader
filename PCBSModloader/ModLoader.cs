@@ -48,7 +48,7 @@ namespace PCBSModloader
             loadAssetBundles = ModHandler.GetComponent<AssetBundles>();
             GameObject.DontDestroyOnLoad(ModHandler);
 
-            ModLogs.Log("----- Initializing PCBSModloader... -----\n");
+            ModLogs.Log("----- Initializing PCBSModloader " + Assembly.GetAssembly(typeof(ModLoader)).GetName().Version + "... -----\n");
             ModLoaderLoaded = false;
             LoadedMods = new List<Mod>();
 

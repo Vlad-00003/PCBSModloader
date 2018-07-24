@@ -43,7 +43,7 @@ namespace PCBSModloader
         public override void OnGUI()
         {
             if (ShowMessage == true)
-                GUI.Label(new Rect(10f, 10f, 200f, 25f), "Modloader Initialized.", LabelStyle);
+                GUI.Label(new Rect(10f, 10f, 200f, 25f), "Modloader Initialized (" + Assembly.GetAssembly(typeof(ModLoader)).GetName().Version + ").", LabelStyle);
 
             if (ShowModList == true)
             {
