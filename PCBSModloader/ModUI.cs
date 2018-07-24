@@ -17,11 +17,14 @@ namespace PCBSModloader
         public bool ShowModList = false;
         public bool ShowMessage = true;
 
+        GUIStyle TitleStyle;
         GUIStyle LabelStyle = new GUIStyle();
 
         public override void OnInit()
         {
             LabelStyle.normal.textColor = Color.green;
+            TitleStyle = new GUIStyle(LabelStyle);
+            TitleStyle.fontStyle = FontStyle.Bold;
         }
 
         public override void OnGame()
@@ -43,11 +46,16 @@ namespace PCBSModloader
         public override void OnGUI()
         {
             if (ShowMessage == true)
-                GUI.Label(new Rect(10f, 10f, 200f, 25f), "Modloader Initialized (" + Assembly.GetAssembly(typeof(ModLoader)).GetName().Version + ").", LabelStyle);
+                GUI.Label(new Rect(10f, 10f, 200f, 25f), "Modloader Initialized (" + Assembly.GetAssembly(typeof(ModLoader)).GetName().Version + ").", TitleStyle);
+
 
             if (ShowModList == true)
             {
-                int i = 0;
+                if (!ShowMessage)
+                    GUI.Label(new Rect(10f, 10f, 200f, 25f), "PCBS Modloader by FusioN. (" + Assembly.GetAssembly(typeof(ModLoader)).GetName().Version + ").", TitleStyle);
+
+                int i = 1;
+                GUI.Label(new Rect(10f, 35f + (15f * i), 200f, 25f), "Mods installed:", TitleStyle);
 
                 foreach (Mod mod in ModLoader.LoadedMods)
                 {
@@ -55,7 +63,7 @@ namespace PCBSModloader
                         continue;
 
                     i += 1;
-                    GUI.Label(new Rect(10f, 35f + (15f * i), 200f, 25f), mod.ID, LabelStyle);
+                    GUI.Label(new Rect(20f, 35f + (15f * i), 200f, 25f), mod.ID, LabelStyle);
                 }
             }
         }

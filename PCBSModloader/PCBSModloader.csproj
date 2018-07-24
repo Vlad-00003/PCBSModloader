@@ -61,6 +61,7 @@
     <Reference Include="UnityEngine.IMGUIModule">
       <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="UnityEngine.UI">
       <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
