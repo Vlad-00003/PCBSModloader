@@ -18,11 +18,17 @@ namespace PCBSModloader
         public static HarmonyInstance Harmony { get; private set; }
 
 
-        public static readonly string Version = "0.1";
+        public static readonly string Version = "0.2";
         public static string ModsPath = GetGameRootPath() + "/Mods";
 
         public static void Init()
         {
+            // create mod directory FIRST, otherwise logging won't work either!
+            if (!Directory.Exists(ModsPath))
+            {
+                Directory.CreateDirectory(ModsPath);
+            }
+
             ModLogs.EnableLogs();
 
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -48,11 +54,6 @@ namespace PCBSModloader
 
             ModLogs.Log("Initializing harmony...");
             Harmony = HarmonyInstance.Create("com.github.harmony.pcbs.mod");
-
-            if (!Directory.Exists(ModsPath))
-            {
-                Directory.CreateDirectory(ModsPath);
-            }
 
             ModLogs.Log("Loading internal mods...");
             LoadMod(new ModUI());
