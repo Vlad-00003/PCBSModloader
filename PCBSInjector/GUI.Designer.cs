@@ -186,9 +186,11 @@
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.modloaderInstallBox);
             this.Controls.Add(this.progressBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "GUI";
-            this.Text = "Modloader Injector for PC Building Simulator v0.2";
+            this.Text = "Modloader Injector for PC Building Simulator v0.4";
             this.modloaderInstallBox.ResumeLayout(false);
             this.modloaderInstallBox.PerformLayout();
             this.informationBox.ResumeLayout(false);
