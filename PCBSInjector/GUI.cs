@@ -5,6 +5,7 @@ using System.Linq;
 using System.IO;
 using System.Windows.Forms;
 using Mono.Cecil.Cil;
+using System.Reflection;
 
 namespace PCBSInjector
 {
@@ -15,6 +16,7 @@ namespace PCBSInjector
         public GUI()
         {
             InitializeComponent();
+            UpdateVersionInformation();
         }
 
         private void gamePathBtn_Click(object sender, EventArgs e)
@@ -44,16 +46,40 @@ namespace PCBSInjector
             }
         }
 
+        private bool isUpdateable = false;
+
+        private void UpdateVersionInformation()
+        {
+
+            Version modloaderVersion = File.Exists(Directory.GetCurrentDirectory() + "/PCBSModloader.dll") ? Assembly.Load(File.ReadAllBytes(Directory.GetCurrentDirectory() + "/PCBSModloader.dll")).GetName().Version : null;
+            Version modloaderInstalledVersion = File.Exists(pathLabel.Text + assemblySubPath + "/PCBSModloader.dll") ? Assembly.Load(File.ReadAllBytes(pathLabel.Text + assemblySubPath + "/PCBSModloader.dll")).GetName().Version : null;
+            this.modloaderVersionLabel.Text = modloaderVersion != null ? modloaderVersion.ToString() : "-";
+            this.modloaderInstalledVersionLabel.Text = modloaderInstalledVersion != null ? modloaderInstalledVersion.ToString() : "-";
+
+            if (modloaderVersion != null && modloaderInstalledVersion != null && modloaderVersion.CompareTo(modloaderInstalledVersion) > 0)
+            {
+                this.installBtn.Text = "Update Modloader";
+                isUpdateable = true;
+            }
+            else
+            {
+                this.installBtn.Text = "Install Modloader";
+                isUpdateable = false;
+            }
+        }
+
         private void StatusAlreadyInstalled()
         {
-            this.installBtn.Enabled = false;
+            UpdateVersionInformation();
+            this.installBtn.Enabled = isUpdateable;
             this.removeBtn.Enabled = true;
             progressBar.Value = 1;
-            progressLabel.Text = "Modloader already installed!";
+            progressLabel.Text = isUpdateable ? "Old Modloader version detected, ready to update!" : "Modloader already installed! ";
         }
 
         private void StatusReadyToInstall()
         {
+            UpdateVersionInformation();
             this.installBtn.Enabled = true;
             this.removeBtn.Enabled = false;
             progressBar.Value = 0;
@@ -62,14 +88,25 @@ namespace PCBSInjector
 
         private void StatusInstalledSuccessfully()
         {
+            UpdateVersionInformation();
             this.installBtn.Enabled = false;
             this.removeBtn.Enabled = true;
             progressBar.Value = 1;
             progressLabel.Text = "Modloader successfully installed!";
         }
 
+        private void StatusUpdatedSuccessfully()
+        {
+            UpdateVersionInformation();
+            this.installBtn.Enabled = false;
+            this.removeBtn.Enabled = true;
+            progressBar.Value = 1;
+            progressLabel.Text = "Modloader successfully updated!";
+        }
+
         private void StatusUninstalledSuccessfully()
         {
+            UpdateVersionInformation();
             this.installBtn.Enabled = true;
             this.removeBtn.Enabled = false;
             progressBar.Value = 0;
@@ -81,6 +118,11 @@ namespace PCBSInjector
             string mainPath = pathLabel.Text + assemblySubPath;
             File.Copy(Directory.GetCurrentDirectory() + "/PCBSModloader.dll", mainPath + "/PCBSModloader.dll", true);
             File.Copy(Directory.GetCurrentDirectory() + "/0Harmony.dll", mainPath + "/0Harmony.dll", true);
+            if (isUpdateable)
+            {
+                StatusUpdatedSuccessfully();
+                return;
+            }
             try
             {
                 Inject(mainPath, "Assembly-CSharp-firstpass.dll", "LogoSplash", "Awake", "PCBSModloader.dll", "PCBSModloader.ModLoader", "Init");

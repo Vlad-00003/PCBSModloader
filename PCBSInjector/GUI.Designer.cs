@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
-            this.InformationBox = new System.Windows.Forms.GroupBox();
+            this.modloaderInstallBox = new System.Windows.Forms.GroupBox();
             this.pathLabel = new System.Windows.Forms.Label();
             this.removeBtn = new System.Windows.Forms.Button();
             this.installBtn = new System.Windows.Forms.Button();
@@ -37,22 +37,28 @@
             this.gamePathLabel = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progressLabel = new System.Windows.Forms.Label();
-            this.InformationBox.SuspendLayout();
+            this.informationBox = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.modloaderVersionLabel = new System.Windows.Forms.Label();
+            this.modloaderInstalledVersionLabel = new System.Windows.Forms.Label();
+            this.modloaderInstallBox.SuspendLayout();
+            this.informationBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // InformationBox
+            // modloaderInstallBox
             // 
-            this.InformationBox.Controls.Add(this.pathLabel);
-            this.InformationBox.Controls.Add(this.removeBtn);
-            this.InformationBox.Controls.Add(this.installBtn);
-            this.InformationBox.Controls.Add(this.gamePathBtn);
-            this.InformationBox.Controls.Add(this.gamePathLabel);
-            this.InformationBox.Location = new System.Drawing.Point(13, 13);
-            this.InformationBox.Name = "InformationBox";
-            this.InformationBox.Size = new System.Drawing.Size(423, 81);
-            this.InformationBox.TabIndex = 0;
-            this.InformationBox.TabStop = false;
-            this.InformationBox.Text = "Information";
+            this.modloaderInstallBox.Controls.Add(this.pathLabel);
+            this.modloaderInstallBox.Controls.Add(this.removeBtn);
+            this.modloaderInstallBox.Controls.Add(this.installBtn);
+            this.modloaderInstallBox.Controls.Add(this.gamePathBtn);
+            this.modloaderInstallBox.Controls.Add(this.gamePathLabel);
+            this.modloaderInstallBox.Location = new System.Drawing.Point(13, 13);
+            this.modloaderInstallBox.Name = "modloaderInstallBox";
+            this.modloaderInstallBox.Size = new System.Drawing.Size(423, 81);
+            this.modloaderInstallBox.TabIndex = 0;
+            this.modloaderInstallBox.TabStop = false;
+            this.modloaderInstallBox.Text = "Modloader Installation";
             // 
             // pathLabel
             // 
@@ -122,19 +128,71 @@
             this.progressLabel.TabIndex = 6;
             this.progressLabel.Text = "Select game path";
             // 
+            // informationBox
+            // 
+            this.informationBox.Controls.Add(this.modloaderInstalledVersionLabel);
+            this.informationBox.Controls.Add(this.modloaderVersionLabel);
+            this.informationBox.Controls.Add(this.label2);
+            this.informationBox.Controls.Add(this.label1);
+            this.informationBox.Location = new System.Drawing.Point(13, 157);
+            this.informationBox.Name = "informationBox";
+            this.informationBox.Size = new System.Drawing.Size(423, 75);
+            this.informationBox.TabIndex = 7;
+            this.informationBox.TabStop = false;
+            this.informationBox.Text = "Information";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Modloader version:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Installed Modloader version:";
+            // 
+            // modloaderVersionLabel
+            // 
+            this.modloaderVersionLabel.AutoSize = true;
+            this.modloaderVersionLabel.Location = new System.Drawing.Point(181, 28);
+            this.modloaderVersionLabel.Name = "modloaderVersionLabel";
+            this.modloaderVersionLabel.Size = new System.Drawing.Size(10, 13);
+            this.modloaderVersionLabel.TabIndex = 3;
+            this.modloaderVersionLabel.Text = "-";
+            // 
+            // modloaderInstalledVersionLabel
+            // 
+            this.modloaderInstalledVersionLabel.AutoSize = true;
+            this.modloaderInstalledVersionLabel.Location = new System.Drawing.Point(181, 46);
+            this.modloaderInstalledVersionLabel.Name = "modloaderInstalledVersionLabel";
+            this.modloaderInstalledVersionLabel.Size = new System.Drawing.Size(10, 13);
+            this.modloaderInstalledVersionLabel.TabIndex = 4;
+            this.modloaderInstalledVersionLabel.Text = "-";
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 151);
+            this.ClientSize = new System.Drawing.Size(448, 244);
+            this.Controls.Add(this.informationBox);
             this.Controls.Add(this.progressLabel);
-            this.Controls.Add(this.InformationBox);
+            this.Controls.Add(this.modloaderInstallBox);
             this.Controls.Add(this.progressBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GUI";
             this.Text = "Modloader Injector for PC Building Simulator v0.2";
-            this.InformationBox.ResumeLayout(false);
-            this.InformationBox.PerformLayout();
+            this.modloaderInstallBox.ResumeLayout(false);
+            this.modloaderInstallBox.PerformLayout();
+            this.informationBox.ResumeLayout(false);
+            this.informationBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +200,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox InformationBox;
+        private System.Windows.Forms.GroupBox modloaderInstallBox;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button installBtn;
         private System.Windows.Forms.Button gamePathBtn;
@@ -150,6 +208,11 @@
         private System.Windows.Forms.Label pathLabel;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label progressLabel;
+        private System.Windows.Forms.GroupBox informationBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label modloaderInstalledVersionLabel;
+        private System.Windows.Forms.Label modloaderVersionLabel;
     }
 }
 
