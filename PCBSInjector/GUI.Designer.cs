@@ -38,10 +38,10 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.progressLabel = new System.Windows.Forms.Label();
             this.informationBox = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.modloaderVersionLabel = new System.Windows.Forms.Label();
             this.modloaderInstalledVersionLabel = new System.Windows.Forms.Label();
+            this.modloaderVersionLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.modloaderInstallBox.SuspendLayout();
             this.informationBox.SuspendLayout();
             this.SuspendLayout();
@@ -141,23 +141,14 @@
             this.informationBox.TabStop = false;
             this.informationBox.Text = "Information";
             // 
-            // label1
+            // modloaderInstalledVersionLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Modloader version:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Installed Modloader version:";
+            this.modloaderInstalledVersionLabel.AutoSize = true;
+            this.modloaderInstalledVersionLabel.Location = new System.Drawing.Point(181, 46);
+            this.modloaderInstalledVersionLabel.Name = "modloaderInstalledVersionLabel";
+            this.modloaderInstalledVersionLabel.Size = new System.Drawing.Size(10, 13);
+            this.modloaderInstalledVersionLabel.TabIndex = 4;
+            this.modloaderInstalledVersionLabel.Text = "-";
             // 
             // modloaderVersionLabel
             // 
@@ -168,14 +159,23 @@
             this.modloaderVersionLabel.TabIndex = 3;
             this.modloaderVersionLabel.Text = "-";
             // 
-            // modloaderInstalledVersionLabel
+            // label2
             // 
-            this.modloaderInstalledVersionLabel.AutoSize = true;
-            this.modloaderInstalledVersionLabel.Location = new System.Drawing.Point(181, 46);
-            this.modloaderInstalledVersionLabel.Name = "modloaderInstalledVersionLabel";
-            this.modloaderInstalledVersionLabel.Size = new System.Drawing.Size(10, 13);
-            this.modloaderInstalledVersionLabel.TabIndex = 4;
-            this.modloaderInstalledVersionLabel.Text = "-";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Installed Modloader version:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Modloader version:";
             // 
             // GUI
             // 
@@ -190,7 +190,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GUI";
-            this.Text = "Modloader Injector for PC Building Simulator v0.4";
+            this.Text = "Modloader Installer for PC Building Simulator v0.5";
             this.modloaderInstallBox.ResumeLayout(false);
             this.modloaderInstallBox.PerformLayout();
             this.informationBox.ResumeLayout(false);
