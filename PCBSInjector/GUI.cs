@@ -13,36 +13,67 @@ namespace PCBSInjector
     {
         private string assemblySubPath = "/PCBS_Data/Managed";
 
+        private string lastPathFile = "lastpath.txt";
+
         public GUI()
         {
             InitializeComponent();
             UpdateVersionInformation();
+            if (File.Exists(lastPathFile))
+            {
+                this.pathLabel.Text = File.ReadAllLines(lastPathFile)[0];
+                CheckAssemblyStatus();
+            }
         }
 
         private void gamePathBtn_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fileDialog = new FolderBrowserDialog();
+            if (this.pathLabel.Text != null)
+            {
+                fileDialog.SelectedPath = this.pathLabel.Text;
+            }
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 this.pathLabel.Text = fileDialog.SelectedPath;
                 this.installBtn.Enabled = true;
 
-                try
+                // save chosen path for next time
+                if (File.Exists(lastPathFile))
                 {
-                    bool isInjected = IsInjected(pathLabel.Text + assemblySubPath + "/Assembly-CSharp-firstpass.dll", "LogoSplash", "Awake", Directory.GetCurrentDirectory()+ "/PCBSModloader.dll", "PCBSModloader.ModLoader", "Init");
-                    if (isInjected)
-                    {
-                        StatusAlreadyInstalled();   
-                    }
-                    else
-                    {
-                        StatusReadyToInstall();
-                    }
+                    File.Delete(lastPathFile);
                 }
-                catch (Exception ex)
+                File.AppendAllText(lastPathFile, this.pathLabel.Text);
+
+                CheckAssemblyStatus();
+            }
+        }
+
+        private void CheckAssemblyStatus()
+        {
+            try
+            {
+                if (!File.Exists(pathLabel.Text + assemblySubPath + "/Assembly-CSharp-firstpass.dll"))
                 {
-                    MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+                    StatusCannotInstall();
+                    MessageBox.Show("Could not find " + pathLabel.Text + assemblySubPath + "/Assembly-CSharp-firstpass.dll \n" +
+                        "Make sure you have selected the right game directory!");
+                    return;
                 }
+                bool isInjected = IsInjected(pathLabel.Text + assemblySubPath + "/Assembly-CSharp-firstpass.dll", "LogoSplash", "Awake", Directory.GetCurrentDirectory() + "/PCBSModloader.dll", "PCBSModloader.ModLoader", "Init");
+                if (isInjected)
+                {
+                    StatusAlreadyInstalled();
+                }
+                else
+                {
+                    StatusReadyToInstall();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
             }
         }
 
@@ -66,6 +97,15 @@ namespace PCBSInjector
                 this.installBtn.Text = "Install Modloader";
                 isUpdateable = false;
             }
+        }
+
+        private void StatusCannotInstall()
+        {
+            UpdateVersionInformation();
+            this.installBtn.Enabled = false;
+            this.removeBtn.Enabled = false;
+            progressBar.Value = 0;
+            progressLabel.Text = "Can not install or update modloader in the chosen path.";
         }
 
         private void StatusAlreadyInstalled()
