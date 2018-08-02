@@ -158,6 +158,10 @@ namespace PCBSInjector
             string mainPath = pathLabel.Text + assemblySubPath;
             File.Copy(Directory.GetCurrentDirectory() + "/PCBSModloader.dll", mainPath + "/PCBSModloader.dll", true);
             File.Copy(Directory.GetCurrentDirectory() + "/0Harmony.dll", mainPath + "/0Harmony.dll", true);
+            if (!Directory.Exists(pathLabel.Text + "/Mods"))
+            {
+                Directory.CreateDirectory(pathLabel.Text + "/Mods");
+            }
             if (isUpdateable)
             {
                 StatusUpdatedSuccessfully();
