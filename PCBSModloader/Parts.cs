@@ -46,11 +46,12 @@ namespace PCBSModloader
                         }
                     }
                     modded.AddComponent<PartInstanceContainer>().Init(part);
+                    modded.AddComponent<BoxCollider>();
+                    modded.AddComponent<ComponentPC>();
                     modded.name = part.GetPart().m_id;
                     assetBundle.Unload(false);
 
                     ModLogs.Log("Replaced prefab of part " + part.GetPart().m_id);
-                    if (modded) ModLogs.Log("Test");
                     return modded;
                 }
             }
