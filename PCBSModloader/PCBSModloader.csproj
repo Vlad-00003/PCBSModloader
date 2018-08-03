@@ -36,6 +36,7 @@
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModLogs.cs" />
     <Compile Include="ModUI.cs" />
+    <Compile Include="Parts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Textures.cs" />
   </ItemGroup>
@@ -49,6 +50,7 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>

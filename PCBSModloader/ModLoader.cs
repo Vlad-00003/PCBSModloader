@@ -54,6 +54,7 @@ namespace PCBSModloader
 
             ModLogs.Log("Initializing harmony...");
             Harmony = HarmonyInstance.Create("com.github.harmony.pcbs.mod");
+            Harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             ModLogs.Log("Loading internal mods...");
             LoadMod(new ModUI());
