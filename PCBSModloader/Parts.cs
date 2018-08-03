@@ -13,7 +13,7 @@ namespace PCBSModloader
     [HarmonyPatch(new Type[] { typeof(PartInstance), typeof(Transform) })]
     class PartsPatch
     {
-        static GameObject Prefix(GameObject __result, PartInstance part, Transform parent)
+        static GameObject Postfix(GameObject __result, PartInstance part, Transform parent)
         {
             string[] config = File.ReadAllLines(ModLoader.ModsPath + "/prefabs.conf");
             foreach (string line in config)
