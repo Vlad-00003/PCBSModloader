@@ -9,6 +9,10 @@ Other mods that replace that file are NOT compatible with the modloader.
 4. Click "Install Modloader" / "Update Modloader" 
 5. If it's green you should be good to go
 
+!When the game updates it will usually overwrite the modloader, so you may have to reinstall the modloader then!
+!Even mods that exist outside of the modloader may get overwritten during a game update!
+
+## Mod Installation
 Mods for the Modloader should have an explanation/readme on how to install them, but the usual way to install them
 is to put the mod-folder into <PCBS folder>/Mods, t.ex. <PCBS folder>/Mods/MyNewMod and then that folder has all
 the mod contents. eg.:
