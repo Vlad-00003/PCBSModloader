@@ -7,7 +7,7 @@ namespace PCBSModloader
 {
     public class ModLogs : MonoBehaviour
     {
-        public static string LogsPath = GetGameRootPath() + "/Mods/log.txt";
+        public static readonly string LogsPath = GetGameRootPath() + "/Mods/log.txt";
 
         public static void EnableLogs()
         {
