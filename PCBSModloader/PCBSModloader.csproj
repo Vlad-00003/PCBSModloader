@@ -77,6 +77,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy $(TargetPath) $(SolutionDir)Release\ /q /y
+xcopy $(TargetDir)$(TargetName).xml $(SolutionDir)Release\ /q /y
 xcopy $(ProjectDir)Dependencies\*  $(SolutionDir)Release\ /q /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
