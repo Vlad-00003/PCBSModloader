@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCBSModloader", "PCBSModloa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCBSInjector", "PCBSInjector\PCBSInjector.csproj", "{214CCC8F-8EEF-42DF-963D-5A17F7FA1F9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleMod", "ModWithConfigExample\ExampleMod.csproj", "{F8DB0CE4-5663-4A83-ACE8-C1E6E8A4940C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{214CCC8F-8EEF-42DF-963D-5A17F7FA1F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{214CCC8F-8EEF-42DF-963D-5A17F7FA1F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{214CCC8F-8EEF-42DF-963D-5A17F7FA1F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DB0CE4-5663-4A83-ACE8-C1E6E8A4940C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DB0CE4-5663-4A83-ACE8-C1E6E8A4940C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DB0CE4-5663-4A83-ACE8-C1E6E8A4940C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DB0CE4-5663-4A83-ACE8-C1E6E8A4940C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
