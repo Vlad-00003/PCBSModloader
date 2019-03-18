@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\PCBSModloader.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssetBundles.cs" />
