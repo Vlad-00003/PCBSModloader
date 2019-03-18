@@ -158,6 +158,7 @@ namespace PCBSInjector
             string mainPath = pathLabel.Text + assemblySubPath;
             File.Copy(Directory.GetCurrentDirectory() + "/PCBSModloader.dll", mainPath + "/PCBSModloader.dll", true);
             File.Copy(Directory.GetCurrentDirectory() + "/0Harmony.dll", mainPath + "/0Harmony.dll", true);
+            File.Copy(Directory.GetCurrentDirectory() + "/Tiny-JSON.dll", mainPath + "/Tiny-JSON.dll", true);
             if (!Directory.Exists(pathLabel.Text + "/Mods"))
             {
                 Directory.CreateDirectory(pathLabel.Text + "/Mods");
@@ -267,6 +268,7 @@ namespace PCBSInjector
             }
             File.Delete(mainPath + "/PCBSModloader.dll");
             File.Delete(mainPath + "/0Harmony.dll");
+            File.Delete(mainPath + "/Tiny-JSON.dll");
         }
     }
 }

@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssetBundles.cs" />
+    <Compile Include="ConfigFile.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModLogs.cs" />
@@ -48,6 +49,9 @@
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Tiny-JSON">
+      <HintPath>Dependencies\Tiny-JSON.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>D:\Games\PC Building Simulator 0.8.6.0\PCBS_Data\Managed\UnityEngine.dll</HintPath>
