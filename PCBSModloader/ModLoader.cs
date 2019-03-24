@@ -73,7 +73,15 @@ namespace PCBSModloader
                 {
                     if (file.EndsWith(".dll"))
                     {
-                        LoadDLL(file);
+                        try
+                        {
+                            LoadDLL(file);
+                        }
+                        catch (Exception e)
+                        {
+                            ModLogs.Log("Could not load dll from file: " + file + "\n" + e.Message + "\n" + e.StackTrace);
+                            return;
+                        }
                     }
                 }
             }
