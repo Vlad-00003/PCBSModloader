@@ -190,7 +190,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "GUI";
-            this.Text = "Modloader Installer for PC Building Simulator v0.5";
+            this.Text = "Modloader Installer for PC Building Simulator v0.6";
+            this.Load += new System.EventHandler(this.GUI_Load);
             this.modloaderInstallBox.ResumeLayout(false);
             this.modloaderInstallBox.PerformLayout();
             this.informationBox.ResumeLayout(false);
