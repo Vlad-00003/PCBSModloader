@@ -106,7 +106,7 @@ namespace PCBSModloader
             }
             catch (Exception e)
             {
-                ModLogs.Log("Could not load Harmony Patches from " + assembly.FullName + "\n" + e.Message + "\n" + e.StackTrace);
+                ModLogs.Log("Could not load Harmony Patches from " + assembly.FullName + "\n" + e);
             }
         }
 

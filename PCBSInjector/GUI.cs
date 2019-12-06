@@ -270,5 +270,18 @@ namespace PCBSInjector
             File.Delete(mainPath + "/0Harmony.dll");
             File.Delete(mainPath + "/Tiny-JSON.dll");
         }
+
+        private void GUI_Load(object sender, EventArgs e)
+        {
+            if (!File.Exists(lastPathFile))
+            {
+                var pcbsexe = Directory.GetFiles(Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath)).Where(filename => filename.EndsWith("PCBS.exe"));
+                if (pcbsexe.Count() > 0)
+                {
+                    pathLabel.Text = Path.GetDirectoryName(pcbsexe.First());
+                    CheckAssemblyStatus();
+                }
+            }
+        }
     }
 }
